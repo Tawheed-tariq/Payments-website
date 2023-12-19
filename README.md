@@ -1,8 +1,39 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+use `npm create vite@latest ` to create react app
+go to the directory `cd payments-website`
+run `npm install` to install dependencies
 
-Currently, two official plugins are available:
+Install tailwindcss and its peer dependencies, then generate your tailwind.config.js and postcss.config.js files.
+```
+    npm install -D tailwindcss postcss autoprefixer
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+    npx tailwindcss init -p 
+```
+Add the paths to all of your template files in your tailwind.config.js file.
+
+```
+    /** @type {import('tailwindcss').Config} */
+    export default {
+    content: [
+        "./index.html",
+        "./src/**/*.{js,ts,jsx,tsx}",
+    ],
+    theme: {
+        extend: {},
+        screens: {}
+    },
+    plugins: [],
+    }
+```
+
+
+Add the @tailwind directives for each of Tailwind’s layers to your ./src/index.css file.
+
+```
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+```
+
+run the app on localhost using `npm run dev`
